@@ -24,6 +24,10 @@ class ContaPoupanca: Conta {
         print("O cliente está solicitando cartão débito")
     }
     
+    override func sacar(_ valor: Double) {
+        saldo -= valor + 10
+    }
+    
     init(nome: String, possuiCartaoDebito: Bool){
         self.possuiCartaoDebito = possuiCartaoDebito
         super.init(nome: nome)
@@ -33,6 +37,8 @@ class ContaPoupanca: Conta {
 var contaPoupanca = ContaPoupanca(nome: "João", possuiCartaoDebito: true)
 contaPoupanca.depositar(1000)
 print(contaPoupanca.saldo)
+contaPoupanca.sacar(50)
+print(contaPoupanca.saldo)
 contaPoupanca.solicitarDebito()
 
 
@@ -41,6 +47,10 @@ class ContaCorrente: Conta {
         print("O cliente está solicitando um emprestimo no valor de \(valor)")
         super.depositar(valor)
     }
+    
+    override func sacar(_ valor: Double) {
+        saldo -= valor + 5
+    }
 }
 
 
@@ -48,3 +58,6 @@ var contaCorrente = ContaCorrente(nome: "Maria")
 contaCorrente.depositar(500)
 print(contaCorrente.saldo)
 contaCorrente.solicitarEmprestimo(20000)
+print(contaCorrente.saldo)
+contaCorrente.sacar(100)
+print(contaCorrente.saldo)
