@@ -1,0 +1,39 @@
+# Arquivos e pastas do macOS
+.DS_Store
+
+# Configurações do VSCode
+.vscode/
+
+# Diretórios de dependências e build comuns
+build/
+DerivedData/
+Pods/
+Carthage/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Arquivos de ambiente e logs
+.env
+*.log
+
+# Arquivos temporários e de backup
+*.tmp
+*.bak
+*.swp
+*.cache
+*.pid
+*.orig
+
+# Arquivos do Xcode
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+
+# Arquivos de configuração de IDEs
+.idea/
+*.iml
