@@ -17,14 +17,20 @@ class Conta {
 
 
 class ContaPoupanca: Conta {
-    var possuiCartaoDebito = false
+    var possuiCartaoDebito: Bool
+    
     func solicitarDebito() {
         possuiCartaoDebito = true
         print("O cliente está solicitando cartão débito")
     }
+    
+    init(nome: String, possuiCartaoDebito: Bool){
+        self.possuiCartaoDebito = possuiCartaoDebito
+        super.init(nome: nome)
+    }
 }
 
-var contaPoupanca = ContaPoupanca(nome: "João")
+var contaPoupanca = ContaPoupanca(nome: "João", possuiCartaoDebito: true)
 contaPoupanca.depositar(1000)
 print(contaPoupanca.saldo)
 contaPoupanca.solicitarDebito()
@@ -33,6 +39,7 @@ contaPoupanca.solicitarDebito()
 class ContaCorrente: Conta {
     func solicitarEmprestimo(_ valor: Double){
         print("O cliente está solicitando um emprestimo no valor de \(valor)")
+        super.depositar(valor)
     }
 }
 
