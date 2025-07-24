@@ -61,3 +61,22 @@ contaCorrente.solicitarEmprestimo(20000)
 print(contaCorrente.saldo)
 contaCorrente.sacar(100)
 print(contaCorrente.saldo)
+
+
+
+func exibeSaldoDaConta(_ conta: Conta){
+    if conta is ContaCorrente{
+        print("Conta é do tipo conta corrente")
+    }
+    
+    if let contaConrrente = conta as? ContaCorrente{
+        contaConrrente.solicitarEmprestimo(10000)
+    }
+    
+    guard let contaPoupanca = conta as? ContaPoupanca else {return}
+    print(contaPoupanca.possuiCartaoDebito)
+          
+}
+
+exibeSaldoDaConta(contaPoupanca)
+exibeSaldoDaConta(contaCorrente)
