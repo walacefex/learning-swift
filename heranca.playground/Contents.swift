@@ -2,6 +2,10 @@ class Conta {
     var saldo: Double = 0.0
     var nome: String
     
+    var negativado: Bool {
+        return saldo < 0
+    }
+    
     func depositar(_ valor: Double) {
         saldo += valor
     }
